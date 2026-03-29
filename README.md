@@ -1,58 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎨 DoPhanHai Personal Portfolio & Blog
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Dự án website cá nhân dành cho Designer 2D, được xây dựng trên nền tảng **Laravel 11** và **React (Vite)**. Website kết hợp giữa việc trưng bày tác phẩm nghệ thuật (Artworks) và chia sẻ kiến thức đồ họa (Blog).
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Tính năng chính
+- **Portfolio Gallery:** Trưng bày các tác phẩm 2D (Concept Art, UI/UX) hỗ trợ định dạng WebP tối ưu dung lượng.
+- **Tech Blog:** Hệ thống bài viết chia sẻ kinh nghiệm, kỹ thuật vẽ và công cụ (Krita, Photoshop).
+- **AI Integration:** Dự kiến tích hợp chatbot hỗ trợ tư vấn phong cách thiết kế (HealthCompass AI core).
+- **Responsive Design:** Giao diện tối ưu cho cả Mobile và Desktop.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠 Công nghệ sử dụng
+- **Backend:** Laravel 11 (PHP 8.2+)
+- **Frontend:** React.js, Tailwind CSS, Framer Motion
+- **Database:** - Development: Oracle Database 21c (WSL2 Connection)
+  - Production: MySQL (Shared Hosting / phpMyAdmin)
+- **Tools:** Cursor AI, DBeaver, WSL2 (Ubuntu)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ⚙️ Cài đặt môi trường (Local Development)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Yêu cầu hệ thống
+- PHP >= 8.2
+- Composer
+- Node.js & NPM
+- WSL2 (Nếu chạy trên Windows)
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 2. Các bước cài đặt
 ```bash
-composer require laravel/boost --dev
+# Clone dự án
+git clone [https://github.com/I-love-Meat-Fr/DoPhanHai_PersonalWebsite.git](https://github.com/I-love-Meat-Fr/DoPhanHai_PersonalWebsite.git)
+cd DoPhanHai_PersonalWebsite
 
-php artisan boost:install
-```
+# Cài đặt thư viện Backend
+composer install
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+# Cài đặt thư viện Frontend
+npm install
 
-## Contributing
+# Tạo file cấu hình môi trường
+cp .env.example .env
+php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Cấu hình Database (WSL2 to Windows Host)
+Trong file .env, cập nhật địa chỉ IP của Windows Host (vEthernet):
 
-## Code of Conduct
+Đoạn mã
+DB_CONNECTION=mysql
+DB_HOST=172.20.32.1  # Thay đổi theo IP vEthernet thực tế
+DB_PORT=3306
+DB_DATABASE=portfolio_db
+DB_USERNAME=root
+DB_PASSWORD=your_password
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. Khởi chạy
+Bash
+# Tab 1: Chạy Backend
+php artisan serve
 
-## Security Vulnerabilities
+# Tab 2: Chạy Frontend (Vite)
+npm run dev
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+📂 Cấu trúc Database (Database First)
+Dự án được thiết kế theo hướng Database First với 2 bảng chính:
 
-## License
+artworks: Lưu trữ tiêu đề, mô tả, link ảnh WebP, danh mục và tags.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+posts: Lưu trữ nội dung bài viết blog liên kết với tác phẩm.
+
+👤 Author
+Họ tên: Quoc Anh (Do Phan Hai)
+
+Role: Full-stack Developer & Digital Artist
+
+Contact: nguyenquocanh170205@gmail.com
