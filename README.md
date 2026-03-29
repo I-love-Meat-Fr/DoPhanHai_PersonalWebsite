@@ -57,7 +57,6 @@ DB_USERNAME=root
 DB_PASSWORD=your_password
 
 4. Khởi chạy
-Bash
 # Tab 1: Chạy Backend
 php artisan serve
 
